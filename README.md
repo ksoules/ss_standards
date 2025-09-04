@@ -4,12 +4,30 @@ Social Studies Standards research project
 # Data Processing Goal
 - normalize the data so that all states are in the same format
 
+## Transpose
+- rearrange data so that each entry is on its own line in the spreadsheet
+
+### Fill and Transpose
+- rerranges the data, but then also fills in blank cells with duplicate information, such as grade, course, keyword, etc
+
+
 **Desired Components**
 - key word
 - grade
 - course name
 - standard text
 - standard ID (if it exists)
+
+IDEAL DATA FORM
+
+| ID  | State | Grade | Course  | Text                | (other details) | Keyword  |
+| --- | ----- | ----- | ------- | ------------------- | --------- | -------- |
+| xdy | AA    | 8     | US-hist | Sample text         | NA        | Keyword1 |
+| xdy | AA    | 8     | US-hist | Sample text         | NA        | Keyword3 |
+| xdy | AA    | 8     | US-hist | Sample text         | NA        | Keyword4 |
+| sdf | MS    | 6     | US-hist | another sample text | NA        | Keyword1 |
+
+
 
 *will need to determine*
 - if/how to create unique identifiers
