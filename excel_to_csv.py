@@ -3,6 +3,11 @@ import os
 import unicodedata
 
 
+### KNOWN ISSUE: when viewing the resulting CSV files in excel, 
+# some grade ranges, such as 6-8 or 7/8, might get autoformated as dates. 
+## to prevent, view the CSV in another application. 
+## Do not try to change the data type in excel, it will not translate it back to the range appropriately
+
 def clean_text(text):
     """
     Clean text by removing or replacing problematic characters.
@@ -25,6 +30,7 @@ def clean_text(text):
     cleaned = ' '.join(cleaned.split())
     
     return cleaned
+
 
 def convert_excel_sheets_to_csv():
     # Define the file path
@@ -51,7 +57,7 @@ def convert_excel_sheets_to_csv():
         # Process each sheet
         for sheet in sheet_names:
             # Read the sheet into a DataFrame with header=None to avoid treating first row as header
-            df = pd.read_excel(excel_file, sheet_name=sheet, header=None)
+            df = pd.read_excel(excel_file, sheet_name=sheet, header=None, dtype=str)
             
             # Delete the first 5 rows
             df = df.drop([1,2,3]).reset_index(drop=True)
