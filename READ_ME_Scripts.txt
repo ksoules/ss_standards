@@ -1,6 +1,6 @@
 excel_to_csv.py
-- convert excel file to separate CSV files for each state
-
+- converts excel file to separate CSV files for each state
+- drops rows 2-4, keeping State name row and column headings
 
 process_states.py
 - ??
@@ -13,7 +13,6 @@ transpose_rows.py
 
 split_indicators.py
 - ??
-
 
 multi_function_script.py
 - looks like an initial attempt to run all of the scripts at once across all of the CSV files
