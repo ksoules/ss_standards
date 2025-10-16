@@ -54,3 +54,12 @@ IDEAL DATA FORM
     - variations on terms (e.g. Jew, Judaism, Jewish)
     - categories of terms (religious traditions, places, concepts, people)
 
+# DO BEFORE PROCESSING ALL STATES
+i.e. after everything is working on the selection of test states
+1. update/review parameters spreadsheet
+1. download new data from Alaska, etc
+
+
+# KNOWN ISSUES
+- when viewing the files in excel, some grade ranges, such as 6-8 or 7/8, might get autoformated as dates. 
+    - to prevent this, view in another application (R studio, etc)
