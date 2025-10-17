@@ -38,8 +38,8 @@ IDEAL DATA FORM
     - theme/concept/time period
 
 **Other issues**
-- remove unwanted line breaks
-- deal with unusual characters
+~~ remove unwanted line breaks~~
+~~ deal with unusual characters~~
 - revise grade column so it is all numerical
 
 
@@ -48,6 +48,17 @@ IDEAL DATA FORM
 - Iowa
 - Oklahoma?
 - 
+
+# Secondary Cleaning
+1. Drop completely empty rows - implemented
+
+2. If there is only data in column 1, write NA column 2. implemented
+- need to normalize NA strings
+
+2. Add a state abbreviation column at the beginning of each each file - implemented
+
+3. Concatenate the contents of columns 5 - not yet working
+3. grades: words to numbers - not implemented
 
 
 # Data Processing Part 2
