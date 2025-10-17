@@ -34,7 +34,7 @@ def clean_text(text):
 
 def convert_excel_sheets_to_csv():
     # Define the file path
-    excel_file = r"C:\Users\kates\Dropbox\Academics\Research Projects\State Standards\ss_standards\testing_data.xlsx"
+    excel_file = r"C:\Users\kates\Dropbox\Academics\Research Projects\State Standards\ss_standards\2025-10-17 ALL MS Standards.xlsx"
     
     # Get the directory path for saving CSV files
     base_dir = os.path.dirname(excel_file)
@@ -43,7 +43,7 @@ def convert_excel_sheets_to_csv():
     output_dir = os.path.dirname(excel_file)
 
     # Create output folder name (change this as needed)
-    output_folder = "for_testing"
+    output_folder = "ms_raw"
     output_dir = os.path.join(base_dir, output_folder)
 
   

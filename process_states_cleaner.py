@@ -146,7 +146,7 @@ def process_split_indicators(rows: List[List[str]], was_transposed: bool) -> Lis
         description = text
         
         # Handle special prefixes
-        if text.startswith(('Theme ', 'Era ', 'SS ', 'LIST of TOPICS')):
+        if text.startswith(('Theme ', 'Era ', 'SS ', 'LIST OF TOPICS')):
             parts = text.split(' ', 2)
             if len(parts) >= 3:
                 code = f"{parts[0]} {parts[1]}"
