@@ -40,6 +40,7 @@ IDEAL DATA FORM
 **Other issues**
 - remove unwanted line breaks
 - deal with unusual characters
+- revise grade column so it is all numerical
 
 
 # States to Update #

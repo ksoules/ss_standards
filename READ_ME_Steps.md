@@ -7,7 +7,7 @@ excel_to_csv.py
 Outcome: individual files for each state with appropriate suffix (_ms or _hs)
 
 
-# Step 2: Reshape the data
+# Step 2: Reshape the data and Initial Data Clean up
 
 
 2a. Fill blanks in first column (Keyword)
@@ -20,31 +20,21 @@ Outcome: individual files for each state with appropriate suffix (_ms or _hs)
 	actions:
 		move each cell after the 4th column to a new row, copying the contents of the first four columns
 
-
-
-# Step 3: Clean Up the Data
-
-3a. separate indicator numbers from text
+2c. Separate indicator numbers from text
 	actions:
 		- moves indicator number to its own column
-		- updates parameters spreadsheet to whether or not the state has indicators
+		{- updates parameters spreadsheet to whether or not the state has indicators} not yet
 
 
+script: process_states_cleaner.py
+- uses params csv to know which operations to perform on each spreadsheet
+- does each of the steps above
 
-process_states.py
-- ??
+*current issues*
+- not all indicator numbers get recognized
+	- esp. if they start with a a phrase
+	
 
-fill_and_transpose.py
-- ??
-
-transpose_rows.py
-- ??
-
-split_indicators.py
-- ??
-
-multi_function_script.py
-- looks like an initial attempt to run all of the scripts at once across all of the CSV files
 
 
 # Step 3 (maybe): 
