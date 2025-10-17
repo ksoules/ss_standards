@@ -19,9 +19,10 @@ def read_params_file(params_path: str) -> Dict[str, Dict[str, bool]]:
                 state = row['state']
                 params[state] = {
                     'skip': row['skip'] == '1',
-                    'rearrange': row['rearrange'].lower() == '1',
-                    'split': row['split'].lower() == '1',
-                    'review': row['review'].lower() == '1'
+                    'fill': row['fill'] == '1' ,
+                    'transpose': row['transpose'] == '1',
+                    'split': row['split'] == '1',
+                    'review': row['review'] == '1'
                 }
         
         print(f"Loaded parameters for {len(params)} files")
@@ -123,12 +124,12 @@ def transpose_columns(rows: List[List[str]]) -> List[List[str]]:
     
     return output_rows
 
-def process_split_indicators(rows: List[List[str]], was_rearranged: bool) -> List[List[str]]:
+def process_split_indicators(rows: List[List[str]], was_transposed: bool) -> List[List[str]]:
     """
     Split the fourth column based on specific rules.
     """
     output_rows = []
-    start_processing = was_rearranged  # Start immediately if file was rearranged
+    start_processing = was_transposed  # Start immediately if file was rearranged
     
     for row in rows:
         # Look for "Keyword" row if file wasn't rearranged
@@ -178,17 +179,18 @@ def process_file(input_path: Path, file_params: Dict[str, bool]) -> None:
     # Apply operations
     if not file_params['skip']:
         # Fill empty cells for all non-skipped files
-        rows = fill_empty_cells(rows)
-        print(f"Completed filling cells in {input_path.name}")
+        if file_params['fill']:
+            rows = fill_empty_cells(rows)
+            print(f"Completed filling cells in {input_path.name}")
         
         # Apply transpose operation if rearrange is true
-        if file_params['rearrange']:
+        if file_params['transpose']:
             rows = transpose_columns(rows)
             print(f"Completed transposing columns in {input_path.name}")
         
         # Apply split operation
         if file_params['split']:
-            rows = process_split_indicators(rows, file_params['rearrange'])
+            rows = process_split_indicators(rows, file_params['transpose'])
             print(f"Completed splitting indicators in {input_path.name}")
         
         # Write final output file
@@ -252,7 +254,7 @@ def process_files(folder_path: str, params_file: str) -> None:
         stats = {
             'skip': [],
             'fill': [],
-            'rearrange': [],
+            'transpose': [],
             'split': [],
             'review': []
         }
@@ -277,8 +279,8 @@ def process_files(folder_path: str, params_file: str) -> None:
                     stats['skip'].append(state)
                 else:
                     stats['fill'].append(state)
-                    if file_params['rearrange']:
-                        stats['rearrange'].append(state)
+                    if file_params['transpose']:
+                        stats['transpose'].append(state)
                     if file_params['split']:
                         stats['split'].append(state)
                     if file_params['review']:
@@ -307,8 +309,8 @@ def main():
     #Main entry point of the script.
     
     try:
-        folder_path = r'C:\Users\kates\Dropbox\Academics\Research Projects\State Standards\ss_standards\for_testing'
-        params_file = r'C:\Users\kates\Dropbox\Academics\Research Projects\State Standards\ss_standards\MS_testing_params.csv'
+        folder_path = r'C:\Users\kates\Dropbox\Academics\Research Projects\State Standards\ss_standards\ms_raw'
+        params_file = r'C:\Users\kates\Dropbox\Academics\Research Projects\State Standards\ss_standards\MS_params.csv'
         
         process_files(folder_path, params_file)
     except Exception as e:
