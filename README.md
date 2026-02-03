@@ -42,13 +42,6 @@ IDEAL DATA FORM
 ~~ deal with unusual characters~~
 - revise grade column so it is all numerical
 
-
-# States to Update #
-- Alabama
-- Iowa
-- Oklahoma?
-- 
-
 # Secondary Cleaning
 1. Drop completely empty rows - implemented
 

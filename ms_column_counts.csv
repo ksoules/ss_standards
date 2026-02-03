@@ -15,8 +15,8 @@ CT_MS.csv,5
 CT_MS_edited.csv,5
 DC_MS.csv,4
 DC_MS_edited.csv,5
-DE_MS.csv,6
-DE_MS_edited.csv,6
+DE_MS.csv,7
+DE_MS_edited.csv,7
 FL_MS.csv,5
 FL_MS_edited.csv,5
 GA_MS.csv,5
@@ -33,8 +33,8 @@ IN_MS.csv,5
 IN_MS_edited.csv,5
 Is everything included_MS.csv,48
 Keyword Calculations_MS.csv,45
-KS_MS.csv,9
-KS_MS_edited.csv,9
+KS_MS.csv,10
+KS_MS_edited.csv,10
 KY_MS.csv,7
 KY_MS_edited.csv,7
 LA_MS.csv,6
@@ -73,23 +73,23 @@ NY_MS.csv,5
 NY_MS_edited.csv,5
 OH_MS.csv,5
 OH_MS_edited.csv,5
-OK_MS.csv,5
-OK_MS_edited.csv,5
+OK_MS.csv,6
+OK_MS_edited.csv,6
 OR_MS.csv,9
 OR_MS_edited.csv,9
-Overview of Standards_MS.csv,45
+Overview of Standards_MS.csv,50
 PA_MS.csv,6
 PA_MS_edited.csv,6
 RI_MS.csv,6
 RI_MS_edited.csv,6
 SC_MS.csv,6
 SC_MS_edited.csv,6
-SD_MS.csv,5
-SD_MS_edited.csv,5
+SD_MS.csv,6
+SD_MS_edited.csv,6
 TN_MS.csv,5
 TN_MS_edited.csv,5
-TX_MS.csv,6
-TX_MS_edited.csv,6
+TX_MS.csv,7
+TX_MS_edited.csv,7
 UT_MS.csv,5
 UT_MS_edited.csv,5
 VA_MS.csv,6
@@ -98,9 +98,9 @@ VT_MS.csv,5
 VT_MS_FLAG.csv,5
 WA_MS.csv,5
 WA_MS_FLAG.csv,5
-WI_MS.csv,5
+WI_MS.csv,6
 WI_MS_edited.csv,5
 WV_MS.csv,5
 WV_MS_edited.csv,5
-WY_MS.csv,5
+WY_MS.csv,6
 WY_MS_edited.csv,5

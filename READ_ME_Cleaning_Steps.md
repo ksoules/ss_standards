@@ -1,6 +1,7 @@
-# Step 1: Download file from Google Sheets
+# Initial Cleaning 
+## Step 1: Download file from Google Sheets
 
-## 1.A Compare to parameters file
+### 1.A Compare to parameters file
 - do the file names match the names of the tabs on the sheet?
 - are the cleaning parameters correctly indicated?
 
@@ -13,12 +14,12 @@
 Outcome: individual files for each state with appropriate suffix (_ms or _hs)
 
 
-# Step 2: Reshape the data and Initial Data Clean up
+## Step 2: Reshape the data and Initial Data Clean up
 - update file names and folder names as necessary
 - run the `process_states_cleaner.py` script
 	-uses params csv to know which operations to perform on each spreadsheet
 
-## How `process_states_cleaner.py` works:
+### How `process_states_cleaner.py` works:
 
 2a. Fill blanks in first column (Keyword)
 	actions:
@@ -33,7 +34,9 @@ Outcome: individual files for each state with appropriate suffix (_ms or _hs)
 2c. Separate indicator numbers from text
 	actions:
 		- moves indicator number to its own column
-		{- updates parameters spreadsheet to whether or not the state has indicators} not yet
+
+2d. Counts the number of columns in the resulting file and produces the 'ms_column_counts.csv' file	
+
 
 
 *current issues*
@@ -42,14 +45,16 @@ Outcome: individual files for each state with appropriate suffix (_ms or _hs)
 	
 
 
-# Step 3 Secondary Cleaning:
+# Secondary Cleaning:
+
+## To prepare for secondary cleaning
 - Review cleaned files to identify additional steps needed
 	- concatenate additional columns
 	- convert grade columns
 	- what else?
 	
 
-# Other Things to Do
+## Other Things to Do
 
 - create unique indicators for each standard
 - standard list of courses?
