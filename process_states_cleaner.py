@@ -309,7 +309,7 @@ def main():
     #Main entry point of the script.
     
     try:
-        folder_path = r'C:\Users\kates\Dropbox\Academics\Research Projects\State Standards\ss_standards\ms_raw'
+        folder_path = r'C:\Users\kates\Dropbox\Academics\Research Projects\State Standards\ss_standards\ms_2026'
         params_file = r'C:\Users\kates\Dropbox\Academics\Research Projects\State Standards\ss_standards\MS_params.csv'
         
         process_files(folder_path, params_file)

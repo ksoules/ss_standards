@@ -1,6 +1,12 @@
-# Step 1: Convert Excel file to individual CSV files for each state
+# Step 1: Download file from Google Sheets
 
-excel_to_csv.py
+## 1.A Compare to parameters file
+- do the file names match the names of the tabs on the sheet?
+- are the cleaning parameters correctly indicated?
+
+# Step 2: Convert Excel file to individual CSV files for each state
+
+`excel_to_csv.py`
 - converts excel file to separate CSV files for each state
 - drops rows 2-4, keeping State name row and column headings
 
@@ -8,7 +14,11 @@ Outcome: individual files for each state with appropriate suffix (_ms or _hs)
 
 
 # Step 2: Reshape the data and Initial Data Clean up
+- update file names and folder names as necessary
+- run the `process_states_cleaner.py` script
+	-uses params csv to know which operations to perform on each spreadsheet
 
+## How `process_states_cleaner.py` works:
 
 2a. Fill blanks in first column (Keyword)
 	actions:
@@ -26,18 +36,21 @@ Outcome: individual files for each state with appropriate suffix (_ms or _hs)
 		{- updates parameters spreadsheet to whether or not the state has indicators} not yet
 
 
-script: process_states_cleaner.py
-- uses params csv to know which operations to perform on each spreadsheet
-- does each of the steps above
-
 *current issues*
 - not all indicator numbers get recognized
 	- esp. if they start with a a phrase
 	
 
 
+# Step 3 Secondary Cleaning:
+- Review cleaned files to identify additional steps needed
+	- concatenate additional columns
+	- convert grade columns
+	- what else?
+	
 
-# Step 3 (maybe): 
+# Other Things to Do
+
 - create unique indicators for each standard
 - standard list of courses?
 
