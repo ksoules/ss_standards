@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 from typing import Dict, List, Tuple
 import shutil
+import pandas as pd
 
 
 def read_params_file(params_path: str) -> Dict[str, Dict[str, bool]]:
@@ -168,6 +169,22 @@ def process_split_indicators(rows: List[List[str]], was_transposed: bool) -> Lis
     
     return output_rows
 
+
+def count_columns_in_csvs(folder, output_file="column_counts.csv"):
+    folder = Path(folder)
+    results = []
+
+    for csv_file in folder.glob("*.csv"):
+        df = pd.read_csv(csv_file, nrows=0)
+        results.append({
+            "file": csv_file.name,
+            "num_columns": len(df.columns)
+        })
+
+    pd.DataFrame(results).to_csv(output_file, index=False)
+    print(f"Saved results to {output_file}")
+
+
 def process_file(input_path: Path, file_params: Dict[str, bool]) -> None:
     """
     Process a single file with all required operations and save to a single output file.
@@ -299,11 +316,17 @@ def process_files(folder_path: str, params_file: str) -> None:
                 print("Files:")
                 for file in files:
                     print(f"- {file}")
+      
     
     except Exception as e:
         print(f"Error during processing: {str(e)}")
         raise
 
+
+
+
+
+    
 def main():
     
     #Main entry point of the script.
@@ -313,6 +336,10 @@ def main():
         params_file = r'C:\Users\kates\Dropbox\Academics\Research Projects\State Standards\ss_standards\MS_params.csv'
         
         process_files(folder_path, params_file)
+        print( "SUCCESS! DONE PROCESSING")
+        print("Counting Columns")
+        count_columns_in_csvs(folder_path, "ms_column_counts.csv")
+
     except Exception as e:
         print(f"\nError: {str(e)}")
         print("\nPlease check that:")
