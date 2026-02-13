@@ -292,6 +292,77 @@ def generate_summary(folder):
     print(f"\nSummary saved to {summary_path}")
     print("=" * 60 + "\n")
 
+def process_remaining_files(folder):
+    """
+    Process all remaining *_edited.csv files and all *_00.csv files:
+    - Remove completely empty rows
+    - For *_edited.csv files, save with _00.csv suffix
+    - For *_00.csv files, overwrite with cleaned version
+    """
+    print("=" * 60)
+    print("Processing remaining files - removing empty rows...")
+    print("=" * 60 + "\n")
+    
+    import csv
+    import glob
+    
+    # Get all _edited.csv and _00.csv files
+    edited_files = glob.glob(os.path.join(folder, "*_edited.csv"))
+    processed_files = glob.glob(os.path.join(folder, "*_00.csv"))
+    
+    # Track which files we've already specially processed
+    specially_processed = [
+        "KY_MS_edited.csv", 
+        "OH_MS_edited.csv", 
+        "AL_edited.csv", 
+        "MA_MS_edited.csv", 
+        "HI_MS_edited.csv", 
+        "MO_MS_edited.csv", 
+        "MN_MS_edited.csv"]
+    
+    files_to_process = []
+    
+    # Add unprocessed _edited.csv files (those not in special cases)
+    for filepath in edited_files:
+        filename = os.path.basename(filepath)
+        if filename not in specially_processed:
+            output_name = filename.replace("_edited.csv", "_00.csv")
+            output_path = os.path.join(folder, output_name)
+            files_to_process.append((filepath, output_path, filename))
+    
+    # Add all _00.csv files to be cleaned in place
+    for filepath in processed_files:
+        filename = os.path.basename(filepath)
+        files_to_process.append((filepath, filepath, filename))
+    
+    # Process each file
+    for input_path, output_path, filename in files_to_process:
+        try:
+            print(f"Processing {filename}...")
+            
+            with open(input_path, 'r', encoding='utf-8') as f:
+                reader = csv.reader(f)
+                rows = list(reader)
+            
+            # Remove completely empty rows
+            non_empty_rows = [row for row in rows if any(cell.strip() for cell in row)]
+            
+            # Write to output file
+            with open(output_path, 'w', encoding='utf-8', newline='') as f:
+                writer = csv.writer(f)
+                writer.writerows(non_empty_rows)
+            
+            removed_count = len(rows) - len(non_empty_rows)
+            print(f"Saved to {os.path.basename(output_path)}")
+            print(f"Removed {removed_count} empty row(s), {len(non_empty_rows)} rows remaining\n")
+        
+        except Exception as e:
+            print(f"Error processing {filename}: {e}\n")
+    
+    print("=" * 60)
+    print("Empty row removal complete!")
+    print("=" * 60 + "\n")
+
 
 
 def main():
@@ -331,6 +402,9 @@ def main():
     print("Processing complete!")
     print("=" * 60)
 
+     
+    # Process remaining files to remove empty rows
+    process_remaining_files(data_folder)
 
     # Generate summary file
     generate_summary(data_folder)
