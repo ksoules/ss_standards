@@ -37,30 +37,35 @@ Outcome: individual files for each state with appropriate suffix (_ms or _hs)
 
 2d. Counts the number of columns in the resulting file and produces the 'ms_column_counts.csv' file	
 
+# Special Cases Cleaning:
+
+`special_case_cleaning.py`
+This script has functions to deal with specific issues in the following files:
+- Alabama
+- Hawaii
+- Kentucky
+- Massachusetts
+- Minnesota
+- Missouri
+- Ohio
+
+- these are also indicated in the "special" column in the parameters file
 
 
-*current issues*
-- not all indicator numbers get recognized
-	- esp. if they start with a a phrase
-	
+# Secondary cleaning
+ ## Step 1: concatenate columns with additional information or subpoints
 
+ ## Step 2: Remove extra header rows and empty rows
 
-# Secondary Cleaning:
+ ## Step 3: Add a state column
 
-## To prepare for secondary cleaning
-- Review cleaned files to identify additional steps needed
-	- concatenate additional columns
-	- convert grade columns
-	- what else?
-	
+ ## (NOT YET) Step 4: Clean up the grade column 
+- before doing this, merge all files, then pull the entire grade column
+	- what are all of the options that need to be dealt with?
+ 	
 
-## Other Things to Do
+# Optional Things to Do
 
 - create unique indicators for each standard
 - standard list of courses?
 
-
-Last steps at the end of cleaning (for now)
-- add the state column at the beginning of every row
-- remove empty rows
--
