@@ -18,6 +18,7 @@ def read_params_file(params_path: str) -> Dict[str, Dict[str, bool]]:
             reader = csv.DictReader(f)
             for row in reader:
                 state = row['state']
+                state = f"{state}.csv" #adds the .csv suffix to file names
                 params[state] = {
                     'skip': row['skip'] == '1',
                     'fill': row['fill'] == '1' ,
