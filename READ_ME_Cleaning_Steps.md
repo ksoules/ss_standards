@@ -9,7 +9,7 @@
 
 `excel_to_csv.py`
 - converts excel file to separate CSV files for each state
-- drops rows 2-4, keeping State name row and column headings
+- drops rows 2-5, keeping State name row
 
 Outcome: individual files for each state with appropriate suffix (_ms or _hs)
 
@@ -50,6 +50,10 @@ This script has functions to deal with specific issues in the following files:
 - Ohio
 
 - these are also indicated in the "special" column in the parameters file
+	- 	these files have the suffix _00 in their file name
+
+at the end of this script, it removes empty rows from all files and added the _00.csv suffix
+This script also produces a file with the number of rows and columns for all files. 
 
 
 # Secondary cleaning
@@ -57,7 +61,9 @@ This script has functions to deal with specific issues in the following files:
 
  ## Step 2: Remove extra header rows and empty rows
 
- ## Step 3: Add a state column
+ ## Step 3: Add values for missing data
+
+ ## Step 4: Add a state column
 
  ## (NOT YET) Step 4: Clean up the grade column 
 - before doing this, merge all files, then pull the entire grade column
@@ -69,3 +75,21 @@ This script has functions to deal with specific issues in the following files:
 - create unique indicators for each standard
 - standard list of courses?
 
+File Names progression:
+- AK_MS.csv - raw extration from Google sheets download
+- AK_MS_edited.csv - after initial cleaning
+- AK_MS_00.csv - after special cleaning and removal of blank rows
+- AK_MS_done.csv - after secondary cleaning: concatenation and appliction of "no_content" to key words no found in that state
+
+
+
+
+
+# Cleaning Process in Brief
+1. Download xlsx file from Google sheets
+1. rename file appropriately
+1. update file name in `excel_to_csv.py` to match
+	- run script
+	- THIS TAKES A WHILE TO RUN
+1. Run `process_states_cleaner.py`
+1. Run `special_case_cleaning.py`
