@@ -1,52 +1,52 @@
-﻿state,Concat,Split Grade and Course Name,,Has indicator column,Indicator column needs further cleaning,,
-AK_MS_edited.csv,,1,,0,0,,
-AL_MS_edited.csv,0,1,,0,0,,
-AR_MS_edited.csv,0,0,,1,0,,
-AZ_MS_edited.csv,0,0,,1,1,,
-CA_MS_edited.csv,0,0,,1,1,,
-CO_MS_edited.csv,0,0,,1,1,,
-CT_MS_edited.csv,0,0,,1,1,,
-DC_MS_edited.csv,0,0,,1,0,,
-DE_MS_edited.csv,0,0,,1,1,,
-FL_MS_edited.csv,0,0,,1,,,
-GA_MS_edited.csv,0,0,,1,0,,
-HI_MS_edited.csv,0,1,,0,0,,Indicator is embedded in standard text
-IA_MS_edited.csv,0,1,,1,0,,
-ID_MS_edited.csv,0,0,,1,0,,
-IL_MS_edited.csv,0,0,,0,0,,
-IN_MS_edited.csv,1,0,,1,0,,missing course name column
-KS_MS_edited.csv,1,0,,0,0,,no grades
-KY_MS_edited.csv,1,0,,1,1,,concat two part course/topic columns
-LA_MS_edited.csv,1,0,,1,0,,
-MA_MS_edited.csv,1,0,,0,,,no indicators in text
-MD_MS_edited.csv,1,0,,0,0,,
-ME_MS_edited.csv,0,0,,0,0,,
-MI_MS_edited.csv,1,0,,1,0,,
-MN_MS_edited.csv,1,0,,1,1,,"strand, standard, code in three separate columns"
-MO_MS_edited.csv,0,0,,0,0,,
-MS_MS_edited.csv,1,0,,1,0,,
-MT_MS_edited.csv,0,0,,0,0,,
-NC_MS_edited.csv,0,0,,1,0,,
-ND_MS_edited.csv,0,0,,1,1,,some indicators are embedded in text
-NE_MS_edited.csv,0,0,,1,1,,
-NH_MS_edited.csv,0,0,,1,1,,
-NJ_MS_edited.csv,0,0,,1,0,,
-NM_MS_edited.csv,0,0,,1,1,,some indicators are embedded in text
-NV_MS_edited.csv,0,0,,1,0,,
-NY_MS_edited.csv,0,0,,1,1,,
-OH_MS_edited.csv,0,0,,0,0,,no indicators in text
-OK_MS_edited.csv,0,0,,0,,,"indicators have not been separated, no course names"
-OR_MS_edited.csv,0,0,,1,0,,
-PA_MS_edited.csv,1,,,,,,
-RI_MS_edited.csv,1,0,,1,0,,
-SC_MS_edited.csv,1,0,,1,0,,two columsn for theme/standard
-SD_MS_edited.csv,1,0,,1,0,,no course names
-TN_MS_edited.csv,0,0,,1,0,,
-TX_MS_edited.csv,1,0,,1,0,,no course names
-UT_MS_edited.csv,0,0,,1,0,,
-VA_MS_edited.csv,0,0,,0,,,
-VT_MS_edited.csv,0,0,,0,0,,
-WA_MS_edited.csv,0,0,,0,0,,
-WI_MS_edited.csv,0,0,,1,0,,
-WV_MS_edited.csv,0,,,,,,
-WY_MS_edited.csv,0,,,1,0,,
+﻿state,Grade columns needs to be normalized,Concat,SPECIAL
+AK_MS_edited.csv,0,0,
+AL_MS_edited.csv,1,1,1
+AR_MS_edited.csv,1,0,
+AZ_MS_edited.csv,1,0,
+CA_MS_edited.csv,1,0,
+CO_MS_edited.csv,1,0,
+CT_MS_edited.csv,1,0,
+DC_MS_edited.csv,0,0,
+DE_MS_edited.csv,1,0,
+FL_MS_edited.csv,1,0,
+GA_MS_edited.csv,1,0,
+HI_MS_edited.csv,1,0,1
+IA_MS_edited.csv,1,0,
+ID_MS_edited.csv,1,0,
+il,,,
+IN_MS_edited.csv,0,1,
+KS_MS_edited.csv,1,0,
+KY_MS_edited.csv,0,1,1
+LA_MS_edited.csv,0,1,
+MA_MS_edited.csv,0,1,1
+MD_MS_edited.csv,1,1,
+me,,,
+MI_MS_edited.csv,0,1,
+MN_MS_edited.csv,0,1,1
+MO_MS_edited.csv,1,0,1
+MS_MS_edited.csv,0,1,
+MT,,,
+NC_MS_edited.csv,0,0,
+ND_MS_edited.csv,1,0,
+NE_MS_edited.csv,0,0,
+NH_MS_edited.csv,1,0,
+NJ_MS_edited.csv,1,0,
+NM_MS_edited.csv,0,0,
+NV_MS_edited.csv,1,0,
+NY_MS_edited.csv,0,0,
+OH_MS_edited.csv,0,0,1
+OK_MS_edited.csv,0,0,
+OR_MS_edited.csv,0,0,
+PA,,,
+RI_MS_edited.csv,0,1,
+SC_MS_edited.csv,0,1,
+SD_MS_edited.csv,0,1,
+TN_MS_edited.csv,0,0,
+TX_MS_edited.csv,0,1,
+UT_MS_edited.csv,1,0,
+VA_MS_edited.csv,0,1,
+VT,,,
+WA,,,
+WI_MS_edited.csv,1,0,
+WV_MS_edited.csv,0,1,
+WY_MS_edited.csv,1,1,
