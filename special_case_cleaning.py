@@ -256,7 +256,7 @@ def generate_summary(folder):
     import glob
     
     # Get all CSV files in the folder
-    csv_files = glob.glob(os.path.join(folder, "*.csv"))
+    csv_files = glob.glob(os.path.join(folder, "*_00.csv"))
     
     summary_data = []
     
